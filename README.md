@@ -6,11 +6,11 @@ A functional approach to error handling. Inspired by Elixir `with` statement.
 
 ### Plain Ruby
 
-Run `gem install railway` in your terminal.
+Run `gem install railway-rb` in your terminal.
 
 ### Ruby on Rails
 
-Add `gem 'railway', '~> 0.0.1'` to your Gemfile and run `bundle install`.
+Add `gem 'railway-rb', '~> 0.0.1'` to your Gemfile and run `bundle install`.
 
 ## Background
 

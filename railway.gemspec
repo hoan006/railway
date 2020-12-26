@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |s|
-  s.name        = 'railway'
+  s.name        = 'railway-rb'
   s.version     = '0.0.1'
   s.date        = '2020-12-25'
   s.summary     = 'Railway-Oriented Programming!'
