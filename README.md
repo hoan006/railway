@@ -108,7 +108,16 @@ Note that `cleaned_username` is now available in the guard block
     end
 ```
 
-6. (Optional) Add a rejection block when any guard block interrupts the call chain
+6. Execute blocks by adding `.run` at the end
+```ruby
+    with # Redacted
+          .when { auth_result.present? }
+          .then do
+      [:ok, auth_result.access_token]
+    end.run
+```
+
+7. (Optional) Add a rejection block when any guard block interrupts the call chain before execution
 ```ruby
     with # Redacted
           .when { auth_result.present? }
@@ -123,7 +132,7 @@ Note that `cleaned_username` is now available in the guard block
       when :auth_result
         [:error, "Wrong username or password"]
       end
-    end
+    end.run
 ```
 
 Railway does not have any early quit (aka no `return`), thus it can deal with error paths later. Furthermore, all Railway variables are simple local variables, so that they can be de-allocated sooner than the typical approach.
@@ -152,7 +161,7 @@ Bonus: Using Railway can transform your service objects (such as `LoginService` 
       when :auth_result
         [:error, "Wrong username or password"]
       end
-    end
+    end.run
   end
 ```
 
